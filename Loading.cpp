@@ -9,7 +9,7 @@
 using namespace std;
 using namespace cv;
 
-Mat img, imgC;
+Mat img, imgF, imgC;
 
 
 void loadPainter(int index) {
@@ -21,10 +21,11 @@ void loadPainter(int index) {
 	TracbarCreation();
 	while (true) {
 		cap.read(img);
-		img.copyTo(imgC);
-		newPoints = findColor(imgC);
+		flip(img, imgF, 1);
+		imgF.copyTo(imgC);
+		newPoints = findColor(imgC);		
 		DrawOnCanvas(newPoints, myColorValues, imgC);
-		if (newPoints.empty()) { img.copyTo(imgC); }
+		if (newPoints.empty()) { imgF.copyTo(imgC); }
 		imshow("Camera", imgC);
 		int k = waitKey(1);
 		if (k == 27) {			
