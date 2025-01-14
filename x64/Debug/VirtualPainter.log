@@ -1,3 +1,4 @@
 ﻿  ColorFunc.cpp
-C:\Users\stari\OneDrive\Documents\GitHub\VirtualPainter\VirtualPainter\ColorFunc.cpp(45,13): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  Loading.cpp
+  Generating Code...
   VirtualPainter.vcxproj -> C:\Users\stari\OneDrive\Documents\GitHub\VirtualPainter\x64\Debug\VirtualPainter.exe

@@ -9,18 +9,27 @@
 using namespace std;
 using namespace cv;
 
-Mat img;
+Mat img, imgC;
+
 
 void loadPainter(int index) {
 	VideoCapture cap(index);
 
+	namedWindow("Camera");
+	setMouseCallback("Camera", mouseEvemt);
+
 	TracbarCreation();
 	while (true) {
 		cap.read(img);
-		newPoints = findColor(img);
-		DrawOnCanvas(newPoints, myColorValues, img);
-		imshow("Camera ", img);
-		waitKey(1);
+		img.copyTo(imgC);
+		newPoints = findColor(imgC);
+		DrawOnCanvas(newPoints, myColorValues, imgC);
+		if (newPoints.empty()) { img.copyTo(imgC); }
+		imshow("Camera", imgC);
+		int k = waitKey(1);
+		if (k == 27) {			
+			exit(0);
+		}
 	}
 	
 }

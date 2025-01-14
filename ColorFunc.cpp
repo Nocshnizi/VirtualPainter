@@ -34,7 +34,6 @@ vector<vector<int>> findColor(Mat img)
 		Point myPoint = getContours(mask, img);
 		if (myPoint.x != 0) {
 			newPoints.push_back({ myPoint.x,myPoint.y,i });
-			
 		}
 	}
 	return newPoints;
@@ -42,13 +41,20 @@ vector<vector<int>> findColor(Mat img)
 
 
 void DrawOnCanvas(vector<vector<int>> newPoints, vector<Scalar> myColorValues, Mat img) {
-	for (int i = newPoints.size()-1; i > 0; i--)
+	for (int i = 0; i < newPoints.size(); i++)
 	{
 		circle(img, Point(newPoints[i][0], newPoints[i][1]), 10, myColorValues[newPoints[i][2]], FILLED);
 	}
 }
 
-
+void mouseEvemt(int event, int x, int y, int flags, void* userdata)
+{
+	if (event == EVENT_RBUTTONDOWN) {
+		// Clear the points when right mouse button is clicked
+		newPoints.clear();
+		cout << newPoints.size()<<endl;
+	}
+}
 
 void TracbarCreation() {
 
