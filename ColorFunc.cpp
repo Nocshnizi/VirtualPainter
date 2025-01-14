@@ -42,11 +42,10 @@ vector<vector<int>> findColor(Mat img)
 
 
 void DrawOnCanvas(vector<vector<int>> newPoints, vector<Scalar> myColorValues, Mat img) {
-    for (int i = 0; i < newPoints.size(); i++)
-    {
-        circle(img, (Point(newPoints[i][0],newPoints[i][1])), 10, myColorValues[newPoints[i][2]], FILLED);
-	
-    }
+	for (int i = newPoints.size()-1; i > 0; i--)
+	{
+		circle(img, Point(newPoints[i][0], newPoints[i][1]), 10, myColorValues[newPoints[i][2]], FILLED);
+	}
 }
 
 
