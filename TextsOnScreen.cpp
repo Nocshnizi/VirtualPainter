@@ -4,16 +4,7 @@
 #include<opencv2/highgui.hpp>
 #include<opencv2/imgcodecs.hpp>
 #include <iostream>
-
 #include"VirtualPainter.h"
+#include"Util.hpp"
 
-using namespace std;
-using namespace cv;
-
-
-void main(){
-
-    loadPainter(0);
-
-}
 

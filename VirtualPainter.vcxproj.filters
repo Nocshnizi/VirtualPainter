@@ -24,12 +24,18 @@
     <ClCompile Include="ColorFunc.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ContoursGunc.cpp">
+    <ClCompile Include="Contours.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TextsOnScreen.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="VirtualPainter.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Util.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

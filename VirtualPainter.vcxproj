@@ -148,11 +148,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ColorFunc.cpp" />
-    <ClCompile Include="ContoursGunc.cpp" />
+    <ClCompile Include="Contours.cpp" />
     <ClCompile Include="Loading.cpp" />
+    <ClCompile Include="TextsOnScreen.cpp" />
     <ClCompile Include="VirtualPainter.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Util.hpp" />
     <ClInclude Include="VirtualPainter.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

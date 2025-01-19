@@ -4,7 +4,8 @@
 #include<opencv2/highgui.hpp>
 #include<opencv2/imgcodecs.hpp>
 #include <iostream>
-
+#include"VirtualPainter.h"
+#include"Util.hpp"
 
 using namespace std;
 using namespace cv;
@@ -40,11 +41,42 @@ Point getContours(Mat image, Mat img) {
 			boundRect[i] = boundingRect(conPoly[i]);
 			myPoint.x = boundRect[i].x + boundRect[i].width / 2;
 			myPoint.y = boundRect[i].y;
-			
+
+			cout << boundRect[i] << endl;
+
 			//drawContours(img, conPoly, i, Scalar(255, 0, 255), 2);
 			rectangle(img, boundRect[i].tl(), boundRect[i].br(), Scalar(0, 0, 0), 5);
-			
+
 		}
 	}
 	return myPoint;
+}
+
+
+bool detectFace(Mat& img, Mat& imgC, CascadeClassifier& faceCascade, vector<Rect>& faces) {
+	if (faceCascade.empty()) { cout << "XML didnt load" << endl; }
+
+	Mat imgGray;
+	cvtColor(img, imgGray, COLOR_BGR2GRAY);
+	equalizeHist(imgGray, imgGray);
+
+	faceCascade.detectMultiScale(imgGray, faces, 1.33, 20, 0, Size(50, 50));
+
+	for (int i = 0; i < faces.size(); i++) {
+		rectangle(imgC, faces[i].tl(), faces[i].br(), Scalar(0, 0, 0), 5);
+		putText(imgC, "face: " + to_string(i), faces[i].tl(), FONT_HERSHEY_COMPLEX, 0.75, Scalar(255, 255, 255));
+	}
+
+	if (faces.size() > 0) {
+		return true;
+	}
+	else {
+		return false;
+	}
+}
+
+void ConnectToFace(Point faceDeltaPos, vector<ColouredPoint>& points) {
+	for (int i = 0; i < points.size(); i++) {
+		points[i].pos += faceDeltaPos;
+	}	
 }
