@@ -37,7 +37,7 @@ void loadPainter(int index) {
 		cap.read(img);
 		flip(img, imgF, 1);
 		Mat imgC = imgF.clone();
-
+		UI(imgC);
 		findColor(isTracking, imgC, points);		
 		DrawOnCanvas(callbackData.buttonClick, points, imgC);
 		detectFace(imgF, imgC, faceCascade, faces);

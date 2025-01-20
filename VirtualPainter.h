@@ -15,4 +15,5 @@ Point getContours(Mat image, Mat img);
 void mouseEvent(int event, int x, int y, int flags, void* userdata);
 bool detectFace(Mat& img, Mat& imgC, CascadeClassifier& faceCascade, vector<Rect>& faces);
 void ConnectToFace(Point faceDeltaPos, vector<ColouredPoint>& points);
+void UI(Mat& img);
 #endif // VIRTUALPAINTER_H

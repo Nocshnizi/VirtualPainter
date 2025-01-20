@@ -1,5 +1,2 @@
-﻿  Contours.cpp
-C:\Users\stari\OneDrive\Documents\GitHub\VirtualPainter\VirtualPainter\Contours.cpp(30,12): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
-C:\Users\stari\OneDrive\Documents\GitHub\VirtualPainter\VirtualPainter\Contours.cpp(37,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-C:\Users\stari\OneDrive\Documents\GitHub\VirtualPainter\VirtualPainter\Contours.cpp(55): warning C4715: 'getContours': not all control paths return a value
+﻿  Loading.cpp
   VirtualPainter.vcxproj -> C:\Users\stari\OneDrive\Documents\GitHub\VirtualPainter\x64\Debug\VirtualPainter.exe

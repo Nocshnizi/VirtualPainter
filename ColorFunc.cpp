@@ -22,12 +22,12 @@ void findColor(bool isTracking, Mat img, vector<ColouredPoint>& points)
 		Scalar upper(myColors[i][3], myColors[i][4], myColors[i][5]);
 		Mat mask;
 		inRange(imgHSV, lower, upper, mask);
-		imshow(to_string(i), mask);
+		//imshow(to_string(i), mask);
 		Point myPoint = getContours(mask, img);
 		
 		if (myPoint.x > 0 && !isTracking ) {
 			points.push_back({ Point(myPoint.x,myPoint.y),i }); 
-			cout << myPoint << endl;
+			//cout << myPoint << endl;
 		}
 	}
 }
