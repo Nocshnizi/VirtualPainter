@@ -37,19 +37,21 @@ Point getContours(Mat image, Mat img) {
 			float peri = arcLength(contours[i], true);
 			approxPolyDP(contours[i], conPoly[i], 0.02 * peri, true);
 
-			//cout << conPoly[i].size() << endl;
+			cout << conPoly[i].size() << endl;
 			boundRect[i] = boundingRect(conPoly[i]);
 			myPoint.x = boundRect[i].x + boundRect[i].width / 2;
 			myPoint.y = boundRect[i].y;
 
-			cout << boundRect[i] << endl;
+			
 
 			//drawContours(img, conPoly, i, Scalar(255, 0, 255), 2);
 			rectangle(img, boundRect[i].tl(), boundRect[i].br(), Scalar(0, 0, 0), 5);
 
+			if (boundRect[i].x > 0 && boundRect[i].y > 0) {
+				return myPoint;
+			}			
 		}
 	}
-	return myPoint;
 }
 
 

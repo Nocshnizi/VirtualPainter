@@ -7,9 +7,10 @@
 using namespace std;
 using namespace cv;
 
+
 void loadPainter(int index);
 void findColor(bool isTracking, Mat img, vector<ColouredPoint>& points);
-void DrawOnCanvas(vector<ColouredPoint>& points, Mat img);
+void DrawOnCanvas(bool buttonClicked, vector<ColouredPoint>& points, Mat img);
 Point getContours(Mat image, Mat img);
 void mouseEvent(int event, int x, int y, int flags, void* userdata);
 bool detectFace(Mat& img, Mat& imgC, CascadeClassifier& faceCascade, vector<Rect>& faces);

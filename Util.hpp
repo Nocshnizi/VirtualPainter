@@ -5,8 +5,14 @@
 #include<opencv2/imgcodecs.hpp>
 #include <iostream>
 
+using namespace cv;
+
 struct ColouredPoint
 {
-	cv::Point pos = cv::Point(0,0);
+	Point pos = Point(0,0);
 	int colorIndx = 0;
+};
+
+struct MouseCallbackData {
+	bool buttonClick;
 };

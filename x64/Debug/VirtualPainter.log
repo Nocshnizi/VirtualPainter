@@ -1,11 +1,5 @@
-﻿  ColorFunc.cpp
-C:\Users\stari\OneDrive\Documents\GitHub\VirtualPainter\VirtualPainter\ColorFunc.cpp(38,14): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
-  Contours.cpp
+﻿  Contours.cpp
 C:\Users\stari\OneDrive\Documents\GitHub\VirtualPainter\VirtualPainter\Contours.cpp(30,12): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
 C:\Users\stari\OneDrive\Documents\GitHub\VirtualPainter\VirtualPainter\Contours.cpp(37,15): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
-  Loading.cpp
-  TextsOnScreen.cpp
-  VirtualPainter.cpp
-C:\Users\stari\OneDrive\Documents\GitHub\VirtualPainter\VirtualPainter\VirtualPainter.cpp(14,12): warning C4326: return type of 'main' should be 'int' instead of 'void'
-  Generating Code...
+C:\Users\stari\OneDrive\Documents\GitHub\VirtualPainter\VirtualPainter\Contours.cpp(55): warning C4715: 'getContours': not all control paths return a value
   VirtualPainter.vcxproj -> C:\Users\stari\OneDrive\Documents\GitHub\VirtualPainter\x64\Debug\VirtualPainter.exe

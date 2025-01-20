@@ -27,7 +27,11 @@ void loadPainter(int index) {
 	vector<Rect> faces;
 	Point lastFacePos(0, 0);
 
-	setMouseCallback("Camera", mouseEvent, &points,);
+	MouseCallbackData callbackData = { false };
+
+	// Set the mouse callback and pass the address of the struct
+	//setMouseCallback("Camera", mouseEvent, &callbackData);
+
 
 	while (true) {
 		cap.read(img);
@@ -35,12 +39,16 @@ void loadPainter(int index) {
 		Mat imgC = imgF.clone();
 
 		findColor(isTracking, imgC, points);		
-		DrawOnCanvas(points, imgC);
+		DrawOnCanvas(callbackData.buttonClick, points, imgC);
 		detectFace(imgF, imgC, faceCascade, faces);
-				
+
+		
 		imshow("Camera", imgC);
 
-		if (points.empty()) { imgF.copyTo(imgC); }
+		if (callbackData.buttonClick) {
+			imgF.copyTo(imgC); 
+		}
+
 		int k = waitKey(1);		
 		if (k == 't' && !faces.empty()) {
 			isTracking = !isTracking;
@@ -56,7 +64,18 @@ void loadPainter(int index) {
 			lastFacePos = Point(faces[0].x, faces[0].y);
 		}
 
+		if (k == 'c') {
+			points.clear();
+			callbackData.buttonClick = true;
+		}
+		else {
+			//Reset input for clearing screen(mouseEvent)
+			callbackData.buttonClick = false;
+		}
+
 		if (k == 27) { exit(0); }
 	}
 	
 }
+
+
